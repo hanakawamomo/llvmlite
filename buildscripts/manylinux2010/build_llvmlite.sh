@@ -26,6 +26,9 @@ export PATH=/opt/python/$pyver/bin:$PATH
 
 echo "Using python: $(which python)"
 
+# Need to trust /root/llvmlite for the build to succeed
+git config --global --add safe.directory /root/llvmlite
+
 # Clean up
 git clean -xdf llvmlite build
 python setup.py clean
